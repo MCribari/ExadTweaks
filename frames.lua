@@ -1,0 +1,1019 @@
+local _, ExadTweaks = ...
+local pairs = _G.pairs
+
+local function FrameColour()
+    for _, v in pairs({
+        PlayerFrameTexture,
+        PlayerFrameAlternateManaBarBorder,
+        PlayerFrameAlternateManaBarLeftBorder,
+        PlayerFrameAlternateManaBarRightBorder,
+        PlayerFrameAlternatePowerBarBorder,
+        PlayerFrameAlternatePowerBarLeftBorder,
+        PlayerFrameAlternatePowerBarRightBorder,
+        TargetFrameTextureFrameTexture,
+        TargetFrameToTTextureFrameTexture,
+        PetFrameTexture,
+        PartyMemberFrame1Texture,
+        PartyMemberFrame2Texture,
+        PartyMemberFrame3Texture,
+        PartyMemberFrame4Texture,
+        PartyMemberFrame1PetFrameTexture,
+        PartyMemberFrame2PetFrameTexture,
+        PartyMemberFrame3PetFrameTexture,
+        PartyMemberFrame4PetFrameTexture,
+        SlidingActionBarTexture0,
+        SlidingActionBarTexture1,
+        MainMenuBarTexture0,
+        MainMenuBarTexture1,
+        MainMenuBarTexture2,
+        MainMenuBarTexture3,
+        MainMenuMaxLevelBar0,
+        MainMenuMaxLevelBar1,
+        MainMenuMaxLevelBar2,
+        MainMenuMaxLevelBar3,
+        MainMenuXPBarTexture0,
+        MainMenuXPBarTexture1,
+        MainMenuXPBarTexture2,
+        MainMenuXPBarTexture3,
+        MainMenuXPBarTexture4,
+        MinimapBorder,
+        MirrorTimer1Border,
+        MirrorTimer2Border,
+        MirrorTimer3Border,
+        MiniMapTrackingBorder,
+        MiniMapLFGFrameBorder,
+        MiniMapBattlefieldBorder,
+        MiniMapMailBorder,
+        MiniMapBorderTop,
+        CastingBarFrameBorder,
+        TargetFrameSpellBarBorder,
+        Rune1BorderTexture,
+        Rune2BorderTexture,
+        Rune3BorderTexture,
+        Rune4BorderTexture,
+        Rune5BorderTexture,
+        Rune6BorderTexture,
+        BonusActionBarTexture0,
+        BonusActionBarTexture1,
+    }) do
+        if v then
+            v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    for _, v in pairs({
+        FocusFrameToTTextureFrameTexture,
+        FocusFrameTextureFrameTexture,
+        FocusFrameSpellBarBorder,
+    }) do
+        if v then
+            v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    CHAT_FONT_HEIGHTS = { 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 }
+
+    for _, v in pairs({
+        MainMenuBarLeftEndCap,
+        MainMenuBarRightEndCap,
+        StanceBarLeft,
+        StanceBarMiddle,
+        StanceBarRight,
+        InterfaceOptionsFrameHeader,
+        InterfaceOptionsFrameTabSpacer,
+        InterfaceOptionsFrameTabSpacer1,
+        InterfaceOptionsFrameTabSpacer2,
+        VideoOptionsFrameHeader,
+        VideoOptionsFrame.BottomEdge,
+        VideoOptionsFrame.BottomLeftCorner,
+        VideoOptionsFrame.BottomRightCorner,
+        VideoOptionsFrame.LeftEdge,
+        VideoOptionsFrame.RightEdge,
+        VideoOptionsFrame.TopEdge,
+        VideoOptionsFrame.TopLeftCorner,
+        VideoOptionsFrame.TopRightCorner,
+        AddonListBotLeftCorner,
+        AddonListBotRightCorner,
+        AddonListBottomBorder,
+        AddonListLeftBorder,
+        AddonListRightBorder,
+        AddonListTopBorder,
+        AddonListTopLeftCorner,
+        AddonListTopRightCorner,
+        AddonListBtnCornerLeft,
+        AddonListBtnCornerRight,
+        AddonListBg,
+        AddonListTitleBg,
+        ExhaustionTickNormal,
+        AddonListEnableAllButton_RightSeparator,
+        AddonListDisableAllButton_RightSeparator,
+        AddonListCancelButton_LeftSeparator,
+        AddonListOkayButton_LeftSeparator,
+        StaticPopup1.BottomEdge,
+        StaticPopup1.BottomLeftCorner,
+        StaticPopup1.BottomRightCorner,
+        StaticPopup1.LeftEdge,
+        StaticPopup1.RightEdge,
+        StaticPopup1.TopEdge,
+        StaticPopup1.TopLeftCorner,
+        StaticPopup1.TopRightCorner,
+        StaticPopup2.BottomEdge,
+        StaticPopup2.BottomLeftCorner,
+        StaticPopup2.BottomRightCorner,
+        StaticPopup2.LeftEdge,
+        StaticPopup2.RightEdge,
+        StaticPopup2.TopEdge,
+        StaticPopup2.TopLeftCorner,
+        StaticPopup2.TopRightCorner,
+        StaticPopup3.BottomEdge,
+        StaticPopup3.BottomLeftCorner,
+        StaticPopup3.BottomRightCorner,
+        StaticPopup3.LeftEdge,
+        StaticPopup3.RightEdge,
+        StaticPopup3.TopEdge,
+        StaticPopup3.TopLeftCorner,
+        StaticPopup3.TopRightCorner,
+        StaticPopup4.BottomEdge,
+        StaticPopup4.BottomLeftCorner,
+        StaticPopup4.BottomRightCorner,
+        StaticPopup4.LeftEdge,
+        StaticPopup4.RightEdge,
+        StaticPopup4.TopEdge,
+        StaticPopup4.TopLeftCorner,
+        StaticPopup4.TopRightCorner,
+        DropDownList1MenuBackdrop.BottomEdge,
+        DropDownList1MenuBackdrop.BottomLeftCorner,
+        DropDownList1MenuBackdrop.BottomRightCorner,
+        DropDownList1MenuBackdrop.LeftEdge,
+        DropDownList1MenuBackdrop.RightEdge,
+        DropDownList1MenuBackdrop.TopEdge,
+        DropDownList1MenuBackdrop.TopLeftCorner,
+        DropDownList1MenuBackdrop.TopRightCorner,
+        DropDownList2MenuBackdrop.BottomEdge,
+        DropDownList2MenuBackdrop.BottomLeftCorner,
+        DropDownList2MenuBackdrop.BottomRightCorner,
+        DropDownList2MenuBackdrop.LeftEdge,
+        DropDownList2MenuBackdrop.RightEdge,
+        DropDownList2MenuBackdrop.TopEdge,
+        DropDownList2MenuBackdrop.TopLeftCorner,
+        DropDownList2MenuBackdrop.TopRightCorner,
+        TradeFrameBg,
+        TradeFrameBottomBorder,
+        TradeFrameButtonBottomBorder,
+        TradeFrameLeftBorder,
+        TradeFrameRightBorder,
+        TradeFrameTitleBg,
+        TradeFrameTopBorder,
+        TradeFrameTopRightCorner,
+        TradeRecipientLeftBorder,
+        TradeFrameBtnCornerLeft,
+        TradeFrameBtnCornerRight,
+        TradeRecipientBG,
+        TradeFramePortraitFrame,
+        TradeRecipientPortraitFrame,
+        TradeRecipientBotLeftCorner,
+        MailFrameBg,
+        MailFrameBotLeftCorner,
+        MailFrameBotRightCorner,
+        MailFrameBottomBorder,
+        MailFrameBtnCornerLeft,
+        MailFrameBtnCornerRight,
+        MailFrameButtonBottomBorder,
+        MailFrameLeftBorder,
+        MailFramePortraitFrame,
+        MailFrameRightBorder,
+        MailFrameTitleBg,
+        MailFrameTopBorder,
+        MailFrameTopLeftCorner,
+        MailFrameTopRightCorner,
+        LootFrameBg,
+        LootFrameRightBorder,
+        LootFrameLeftBorder,
+        LootFrameTopBorder,
+        LootFrameBottomBorder,
+        LootFrameTopRightCorner,
+        LootFrameTopLeftCorner,
+        LootFrameBotRightCorner,
+        LootFrameBotLeftCorner,
+        LootFramePortraitFrame,
+        MerchantFrameTitleBg,
+        MerchantFrameTopBorder,
+        MerchantFrameBtnCornerRight,
+        MerchantFrameBtnCornerLeft,
+        MerchantFrameBottomRightBorder,
+        MerchantFrameBottomLeftBorder,
+        MerchantFrameButtonBottomBorder,
+        MerchantFrameBg,
+        ShapeshiftBarFrame:GetRegions()
+    }) do
+        if v then
+            v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    for i = 1, 12 do
+        for _, v in ipairs({ "BackgroundTop", "BackgroundMiddle1", "BackgroundMiddle2", "BackgroundBottom" }) do
+            local container = _G["ContainerFrame" .. i .. v]
+            if container then
+                container:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- TotemFrame
+    if TotemFrame then
+        for i = 1, 4 do
+            local _, totem = _G["TotemFrameTotem" .. i]:GetChildren()
+            if totem then
+                totem:GetRegions():SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+	
+	--ToT better visibility
+	TargetFrameToT:ClearAllPoints();
+    TargetFrameToT:SetPoint("RIGHT", "TargetFrame", "BOTTOMRIGHT", -20, 5);
+    FocusFrameToT:ClearAllPoints();
+    FocusFrameToT:SetPoint("RIGHT", "FocusFrame", "BOTTOMRIGHT", -20, 5);
+	
+    -- BankFrame
+    if BankFrame then
+        local a, b, c, d, e = BankFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d, e }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- MerchantFrame
+    if MerchantFrameTab1 then
+        local a, b, c, d, e, f = MerchantFrameTab1:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if MerchantFrameTab2 then
+        local a, b, c, d, e, f = MerchantFrameTab2:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if MerchantFrame then
+        local _, a, b, c, d, _, _, _, e, f, g, h, j, k = MerchantFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f, g, h, j, k }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- Paperdoll
+
+    if PaperDollFrame then
+        local a, b, c, d, _, e = PaperDollFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d, e }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if PetPaperDollFrameCompanionFrame then
+        local a, _, c = PetPaperDollFrameCompanionFrame:GetRegions()
+        for _, v in pairs({ a, c }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if PetPaperDollFrame then
+        local _, b, c, d, e = PetPaperDollFrame:GetRegions()
+        for _, v in pairs({ b, c, d, e }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- TokenFrame
+
+    if TokenFrame then
+        local a, b, c, d = TokenFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+
+        for i = 1, 20 do
+            local vertex = _G["TokenFrameContainerButton" .. i .. "Stripe"]
+            if vertex then
+                vertex:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- Skill
+
+    if SkillFrame then
+        local a, b, c, d = SkillFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    --Reputation Frame
+
+    if ReputationFrame then
+        local a, b, c, d = ReputationFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if ReputationDetailCorner and ReputationDetailDivider then
+        for _, v in pairs({ ReputationDetailCorner, ReputationDetailDivider }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- PvPFrame
+
+    if PVPFrame then
+        local _, _, c, d, e, f, g, h = PVPFrame:GetRegions()
+        for _, v in pairs({ c, d, e, f, g, h }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if HonorFrame then
+        local a, b, c, d = HonorFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- Character Tabs
+
+    if CharacterFrameTab1 then
+        local a, b, c, d, e, f = CharacterFrameTab1:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if CharacterFrameTab2 then
+        local a, b, c, d, e, f = CharacterFrameTab2:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if CharacterFrameTab3 then
+        local a, b, c, d, e, f = CharacterFrameTab3:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if CharacterFrameTab4 then
+        local a, b, c, d, e, f = CharacterFrameTab4:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if CharacterFrameTab5 then
+        local a, b, c, d, e, f = CharacterFrameTab5:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- Social Frame
+    if FriendsFrame then
+        local a, b, c, d, e, f, g, _, i, j, k, l, n, o, p, q, r, _, _ = FriendsFrame:GetRegions()
+        for _, v in pairs({
+            b, c, d, e, g, i, j, k, l, n, o, p, q, r,
+        }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if FriendsFrameInsetInsetBottomBorder then
+        FriendsFrameInsetInsetBottomBorder:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+    if WhoFrameEditBoxInset then
+        WhoFrameEditBoxInset:GetRegions():SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+    if WhoFrameDropDownLeft then
+        WhoFrameDropDownLeft:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+    if WhoFrameDropDownMiddle then
+        WhoFrameDropDownMiddle:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+    if WhoFrameDropDownRight then
+        WhoFrameDropDownRight:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+
+    if WhoFrameEditBoxInset then
+        local a, b, c, d, e, f, g, h, i = WhoFrameEditBoxInset:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f, g, h, i }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if FriendsFrameTab1 then
+        local a, b, c, d, e, f = FriendsFrameTab1:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if FriendsFrameTab2 then
+        local a, b, c, d, e, f = FriendsFrameTab2:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if FriendsFrameTab3 then
+        local a, b, c, d, e, f = FriendsFrameTab3:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if FriendsFrameTab4 then
+        local a, b, c, d, e, f = FriendsFrameTab4:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- GuildFrame
+
+    if GuildFrame then
+        local _, _, _, _, e, f = GuildFrame:GetRegions()
+        for _, v in pairs({ e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- MailFrame
+
+    if MailFrameTab1 then
+        local a, b, c, d, e, f = MailFrameTab1:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if MailFrameTab2 then
+        local a, b, c, d, e, f = MailFrameTab2:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    for i = 1, MAX_SKILLLINE_TABS do
+        local vertex = _G["SpellBookSkillLineTab" .. i]:GetRegions()
+        if vertex then
+            vertex:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    -- Should remain untouched
+    for _, v in pairs({
+        BankPortraitTexture,
+        BankFrameTitleText,
+        WhoFrameTotals,
+        MerchantFramePortrait
+    }) do
+        if v then
+            v:SetVertexColor(1, 1, 1)
+        end
+    end
+
+    if ChatFrame1EditBoxLeft then
+        ChatFrame1EditBoxLeft:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+    if ChatFrame1EditBoxMid then
+        ChatFrame1EditBoxMid:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+    if ChatFrame1EditBoxRight then
+        ChatFrame1EditBoxRight:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+
+    if GameTooltip then
+        GameTooltip:SetBackdropBorderColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+
+    if LFDParentFrame then
+        for _, region in pairs({ LFDParentFrame:GetRegions() }) do
+            if region and region:IsObjectType("Texture") then
+                region:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if CompactRaidFrameContainerBorderFrame then
+        for _, region in pairs({ CompactRaidFrameContainerBorderFrame:GetRegions() }) do
+            if region and region:IsObjectType("Texture") then
+                region:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    for _, v in pairs({ ComboPoint1, ComboPoint2, ComboPoint3, ComboPoint4, ComboPoint5 }) do
+        if v then
+            v:GetRegions():SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+end
+
+local function NewVariables()
+    -- Rep bar
+    for i = 1, 15 do
+        local FrameBG = _G["ReputationBar" .. i .. "Background"]
+        if FrameBG then
+            FrameBG:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    -- SpellBookFrame
+    if SpellBookFrame then
+        local _, a, b, c, d = SpellBookFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if not SpellBookFrame.Material then
+        SpellBookFrame.Material = SpellBookFrame:CreateTexture(nil, "OVERLAY", nil, 7)
+        SpellBookFrame.Material:SetTexture("Interface\\AddOns\\ExadTweaks\\textures\\art\\QuestBG.tga")
+        SpellBookFrame.Material:SetWidth(547)
+        SpellBookFrame.Material:SetHeight(541)
+        SpellBookFrame.Material:SetPoint("TOPLEFT", SpellBookFrame, 22, -74)
+        SpellBookFrame.Material:SetVertexColor(.9, .9, .9)
+    end
+
+    -- QuestLogFrame
+
+    local _, b, c, d, e, f = QuestLogFrame:GetRegions()
+    for _, v in pairs({ b, c, e }) do
+        if v then
+            v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    if IsAddOnLoaded("Leatrix_Plus") and LeaPlusDB["EnhanceQuestLog"] == "On" then
+        QuestLogFrame.Material = QuestLogFrame:CreateTexture(nil, "OVERLAY", nil, 7)
+        QuestLogFrame.Material:SetTexture("Interface\\AddOns\\ExadTweaks\\textures\\art\\QuestBG.tga")
+        QuestLogFrame.Material:SetWidth(531)
+        QuestLogFrame.Material:SetHeight(625)
+        QuestLogFrame.Material:SetPoint("TOPLEFT", QuestLogDetailScrollFrame, -10, 0)
+        QuestLogFrame.Material:SetVertexColor(.9, .9, .9)
+    else
+        QuestLogFrame.Material = QuestLogFrame:CreateTexture(nil, "OVERLAY", nil, 7)
+        QuestLogFrame.Material:SetTexture("Interface\\AddOns\\ExadTweaks\\textures\\art\\QuestBG.tga")
+        QuestLogFrame.Material:SetWidth(531)
+        QuestLogFrame.Material:SetHeight(511)
+        QuestLogFrame.Material:SetPoint("TOPLEFT", QuestLogDetailScrollFrame, -10, 0)
+        QuestLogFrame.Material:SetVertexColor(.9, .9, .9)
+    end
+
+    for _, v in pairs({
+        GossipFrame.GreetingPanel,
+        QuestFrameRewardPanel,
+        QuestFrameDetailPanel,
+        QuestFrameProgressPanel,
+        QuestFrameGreetingPanel,
+    }) do
+        for _, j in pairs({ v:GetRegions() }) do
+            if j then
+                j:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+
+        if not v.Material then
+            v.Material = v:CreateTexture(nil, "OVERLAY", nil, 7)
+            v.Material:SetTexture("Interface\\AddOns\\ExadTweaks\\textures\\art\\QuestBG.tga")
+            v.Material:SetWidth(514)
+            v.Material:SetHeight(522)
+            v.Material:SetPoint("TOPLEFT", v, 22, -74)
+            v.Material:SetVertexColor(.9, .9, .9)
+        end
+
+        if v == GossipFrame.GreetingPanel or v == QuestFrameGreetingPanel then
+            v.Corner = v:CreateTexture(nil, "OVERLAY", nil, 7)
+            v.Corner:SetTexture("Interface\\QuestFrame\\UI-Quest-BotLeftPatch")
+            v.Corner:SetSize(132, 64)
+            v.Corner:SetPoint("BOTTOMLEFT", v, 21, 68)
+            v.Corner:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    -- Wardrobe
+    local _, a, b, c, d, e = DressUpFrame:GetRegions()
+    for _, v in pairs({ a, b, c, d, e }) do
+        if v then
+            v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    -- Readycheck
+    local _, a = ReadyCheckListenerFrame:GetRegions()
+    if a then
+        a:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+    end
+
+    -- Scoreboard
+    local a, b, c, d, e, f, _, h, _, _, _, l = WorldStateScoreFrame:GetRegions()
+    local wscf = { a, b, c, d, e, f, l }
+    for _, v in pairs(wscf) do
+        if v then
+            v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    -- Taxiframe
+    local _, a, b, c, d = TaxiFrame:GetRegions()
+    for _, v in pairs({ a, b, c, d }) do
+        if v then
+            v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    -- TabardFrame
+    local _, a, b, c, d = TabardFrame:GetRegions()
+    for _, v in pairs({ a, b, c, d, e }) do
+        if v then
+            v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+
+    -- PetStable
+    for _, v in pairs({ PetStableFrame:GetRegions() }) do
+        if v:GetObjectType() == "Texture" and v ~= PetStableFramePortrait then
+            v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+    end
+end
+
+local function BlizzFrames(addon)
+    -- GlyphFrame
+    if addon == "Blizzard_GlyphUI" then
+        local a, _, c, d, e, f, g, h, i = GlyphFrame:GetRegions()
+        for _, v in pairs({ a, c, d, e, f, g, h, i }) do
+            if v then
+                if ExadTweaks.db.Colval <= 0.5 then
+                    v:SetVertexColor(.5, .5, .5)
+                else
+                    v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+                end
+            end
+        end
+    end
+
+    -- CalendarFrame
+    if addon == "Blizzard_Calendar" then
+        local vectors = { CalendarFrame:GetRegions() }
+        for i = 1, 13 do
+            if vectors[i] then
+                vectors[i]:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    --RECOLOR Achievement
+
+    if addon == "Blizzard_AchievementUI" then
+        local a, b, c, d, e, f, g, h, i, j, k, l, m, n, o = AchievementFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f, g, h, i, j, k, l, m, n, o }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- Barber
+    if addon == "Blizzard_BarbershopUI" then
+        local a, b, c = BarberShopFrame:GetRegions()
+        for _, v in pairs({ a, b, c }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- Talentframe
+
+    if addon == "Blizzard_TalentUI" then
+        local vectors = { PlayerTalentFrame:GetRegions() }
+        for i = 2, 6 do
+            if vectors[i] then
+                vectors[i]:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+
+        if PlayerTalentFramePointsBar then
+            local vectors = { PlayerTalentFramePointsBar:GetRegions() }
+            for i = 1, 4 do
+                if vectors[i] then
+                    vectors[i]:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+                end
+            end
+        end
+
+        if PlayerSpecTab1Background then
+            PlayerSpecTab1Background:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+        if PlayerSpecTab2Background then
+            PlayerSpecTab2Background:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+        end
+
+        for _, v in pairs({
+            PlayerTalentFrameScrollFrameBackgroundTop,
+            PlayerTalentFrameScrollFrameBackgroundBottom,
+            PlayerTalentFrameTab1LeftDisabled,
+            PlayerTalentFrameTab1MiddleDisabled,
+            PlayerTalentFrameTab1RightDisabled,
+            PlayerTalentFrameTab2LeftDisabled,
+            PlayerTalentFrameTab2MiddleDisabled,
+            PlayerTalentFrameTab2RightDisabled,
+            PlayerTalentFrameTab3LeftDisabled,
+            PlayerTalentFrameTab3MiddleDisabled,
+            PlayerTalentFrameTab3RightDisabled,
+            PlayerTalentFrameTab4LeftDisabled,
+            PlayerTalentFrameTab4MiddleDisabled,
+            PlayerTalentFrameTab4RightDisabled,
+        }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- Tradeskill
+    if addon == "Blizzard_TradeSkillUI" then
+        local _, b, c, d, e, f, g, h, i, j = TradeSkillFrame:GetRegions()
+        local tsui = { b, c, d, e, f, h, i }
+        for _, v in pairs(tsui) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- ClassTrainerFrame
+    if addon == "Blizzard_TrainerUI" then
+        local _, a, b, c, d, _, e, f, g, h = ClassTrainerFrame:GetRegions()
+
+        for _, v in pairs({ a, b, c, d, e, f, g, h }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    -- InspectFrame/InspectTalentFrame/InspectPVPFrame
+
+    if addon == "Blizzard_InspectUI" then
+        for _, v in pairs({
+            InspectTalentFramePointsBarBorderLeft,
+            InspectTalentFramePointsBarBorderMiddle,
+            InspectTalentFramePointsBarBorderRight,
+            InspectTalentFramePointsBarBackground,
+            InspectFrameTab1LeftDisabled,
+            InspectFrameTab1MiddleDisabled,
+            InspectFrameTab1RightDisabled,
+            InspectFrameTab2LeftDisabled,
+            InspectFrameTab2MiddleDisabled,
+            InspectFrameTab2RightDisabled,
+            InspectFrameTab3LeftDisabled,
+            InspectFrameTab3MiddleDisabled,
+            InspectFrameTab3RightDisabled,
+            InspectTalentFrameTab1Left,
+            InspectTalentFrameTab1Right,
+            InspectTalentFrameTab1Middle,
+            InspectTalentFrameTab1LeftDisabled,
+            InspectTalentFrameTab1MiddleDisabled,
+            InspectTalentFrameTab1RightDisabled,
+            InspectTalentFrameTab2Left,
+            InspectTalentFrameTab2Right,
+            InspectTalentFrameTab2Middle,
+            InspectTalentFrameTab2LeftDisabled,
+            InspectTalentFrameTab2MiddleDisabled,
+            InspectTalentFrameTab2RightDisabled,
+            InspectTalentFrameTab3Left,
+            InspectTalentFrameTab3Right,
+            InspectTalentFrameTab3Middle,
+            InspectTalentFrameTab3LeftDisabled,
+            InspectTalentFrameTab3MiddleDisabled,
+            InspectTalentFrameTab3RightDisabled,
+        }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+        if InspectPaperDollFrame then
+            local vectors = { InspectPaperDollFrame:GetRegions() }
+            for i = 1, 4 do
+                if vectors[i] then
+                    vectors[i]:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+                end
+            end
+        end
+
+        if InspectPVPFrame then
+            local vectors = { InspectPVPFrame:GetRegions() }
+            for i = 1, 5 do
+                if vectors[i] then
+                    vectors[i]:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+                end
+            end
+        end
+
+        if InspectHonorFrame then
+            local a, b, c, d = InspectHonorFrame:GetRegions()
+            for _, v in pairs({ a, b, c, d }) do
+                if v then
+                    v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+                end
+            end
+        end
+
+        if InspectTalentFrame then
+            local vectors = { InspectTalentFrame:GetRegions() }
+            for i = 1, 5 do
+                if vectors[i] then
+                    vectors[i]:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+                end
+            end
+        end
+
+        if InspectTalentFrameScrollFrame then
+            local vectors = { InspectTalentFrameScrollFrame:GetRegions() }
+            for i = 1, 2 do
+                if vectors[i] then
+                    vectors[i]:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+                end
+            end
+        end
+    end
+
+    -- Macro's
+    if addon == "Blizzard_MacroUI" then
+        local a, b, c, d, e, f, g, h, i, j, k, l, n, o, p, q, r = MacroFrame:GetRegions()
+        for _, v in pairs({ a, b, c, d, e, f, g, h, i, j, k, l, n, o, p, q, r }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+
+        for _, v in pairs({
+            MacroFrameTab1Left,
+            MacroFrameTab1Right,
+            MacroFrameTab1Middle,
+            MacroFrameTab1LeftDisabled,
+            MacroFrameTab1MiddleDisabled,
+            MacroFrameTab1RightDisabled,
+            MacroFrameTab2Left,
+            MacroFrameTab2Right,
+            MacroFrameTab2Middle,
+            MacroFrameTab2LeftDisabled,
+            MacroFrameTab2MiddleDisabled,
+            MacroFrameTab2RightDisabled,
+        }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+    end
+
+    if addon == "Blizzard_ArenaUI" then
+        for _, v in pairs({
+            ArenaEnemyFrame1Texture,
+            ArenaEnemyFrame2Texture,
+            ArenaEnemyFrame3Texture,
+            ArenaEnemyFrame4Texture,
+            ArenaEnemyFrame5Texture,
+            ArenaEnemyFrame1SpecBorder,
+            ArenaEnemyFrame2SpecBorder,
+            ArenaEnemyFrame3SpecBorder,
+            ArenaEnemyFrame4SpecBorder,
+            ArenaEnemyFrame5SpecBorder,
+            ArenaEnemyFrame1PetFrameTexture,
+            ArenaEnemyFrame2PetFrameTexture,
+            ArenaEnemyFrame3PetFrameTexture,
+            ArenaEnemyFrame4PetFrameTexture,
+            ArenaEnemyFrame5PetFrameTexture,
+            ArenaPrepFrame1Texture,
+            ArenaPrepFrame2Texture,
+            ArenaPrepFrame3Texture,
+            ArenaPrepFrame4Texture,
+            ArenaPrepFrame5Texture,
+            ArenaPrepFrame1SpecBorder,
+            ArenaPrepFrame2SpecBorder,
+            ArenaPrepFrame3SpecBorder,
+            ArenaPrepFrame4SpecBorder, }) do
+            if v then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+        ExadTweaks.ExadTweaksF:CusFonts()
+    end
+
+    if addon == "Blizzard_Collections" then
+        for _, v in pairs({ CollectionsJournal:GetRegions() }) do
+            if v and v:IsObjectType("Texture") then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+        for _, v in pairs({ MountJournal:GetRegions() }) do
+            if v and v:IsObjectType("Texture") then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+        for _, v in pairs({ PetJournal:GetRegions() }) do
+            if v and v:IsObjectType("Texture") then
+                v:SetVertexColor(ExadTweaks.db.Colval, ExadTweaks.db.Colval, ExadTweaks.db.Colval)
+            end
+        end
+        CollectionsJournalTitleText:SetVertexColor(1, 1, 1)
+        CollectionsJournalPortrait:SetVertexColor(1, 1, 1)
+    end
+end
+
+local Framecolor = CreateFrame("Frame")
+
+Framecolor:RegisterEvent("ADDON_LOADED")
+Framecolor:SetScript("OnEvent", function(self, event, addon)
+    if event == "ADDON_LOADED" and addon == "ExadTweaks" then
+        FrameColour()
+        NewVariables()
+    end
+end)
+
+local Blizz = CreateFrame("Frame")
+Blizz:RegisterEvent("ADDON_LOADED")
+Blizz:SetScript("OnEvent", function(_, event, addon)
+    if event == "ADDON_LOADED" then
+        BlizzFrames(addon)
+    end
+end)
+
+function ExadTweaks.ExadTweaksF:ChangeFrameColors()
+    FrameColour()
+    NewVariables()
+    BlizzFrames()
+end

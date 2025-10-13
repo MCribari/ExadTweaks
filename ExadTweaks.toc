@@ -1,0 +1,25 @@
+## Interface: 30300
+## Title: |cff009cffExadTweaks|r
+## Author: Exad
+## Version: 3.1
+## SavedVariablesPerCharacter: ExadTweaks
+## DefaultState: enabled
+
+
+settings.lua
+frames.lua
+smooth.lua
+extra.lua
+textbar.lua
+combat.lua
+castbar.lua
+nameplate.lua
+auras.lua
+retab.lua
+minimap.lua
+button.lua
+energy.lua
+outlines.lua
+snowfallkey.lua
+combofix.lua
+XYZ.lua

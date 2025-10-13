@@ -1,0 +1,107 @@
+local _, ExadTweaks = ...
+local FontType = STANDARD_TEXT_FONT
+local mfloor, tonumber, mceil = math.floor, tonumber, math.ceil
+
+local function round(value)
+    return mfloor(value + 0.5)
+end
+
+function ExadTweaks.ExadTweaksF:CusFonts()
+    if PlayerFrameHealthBar and PlayerFrameHealthBar.TextString then
+        PlayerFrameHealthBar.TextString:SetFont(FontType, ExadTweaks.db.HPFontSize, "OUTLINE")
+    end
+
+    if PlayerFrameManaBar and PlayerFrameManaBar.TextString then
+        PlayerFrameManaBar.TextString:SetFont(FontType, ExadTweaks.db.ManaFontSize, "OUTLINE")
+    end
+
+    if PetFrameHealthBar and PetFrameHealthBar.TextString then
+        PetFrameHealthBar.TextString:SetFont(FontType, ExadTweaks.db.HPFontSize - 2, "OUTLINE")
+    end
+
+    if PetFrameManaBar and PetFrameManaBar.TextString then
+        PetFrameManaBar.TextString:SetFont(FontType, ExadTweaks.db.ManaFontSize - 2, "OUTLINE")
+    end
+
+    if TargetFrameHealthBar and TargetFrameHealthBar.TextString then
+        TargetFrameHealthBar.TextString:SetFont(FontType, ExadTweaks.db.HPFontSize, "OUTLINE")
+
+        TargetFrameManaBar.TextString:SetFont(FontType, ExadTweaks.db.ManaFontSize, "OUTLINE")
+    end
+
+    if FocusFrameHealthBar and FocusFrameHealthBar.TextString then
+        FocusFrameHealthBar.TextString:SetFont(FontType, ExadTweaks.db.HPFontSize, "OUTLINE")
+
+        FocusFrameManaBar.TextString:SetFont(FontType, ExadTweaks.db.ManaFontSize, "OUTLINE")
+    end
+
+    for i = 1, 5 do
+        if _G["ArenaEnemyFrame" .. i] then
+            local hp = _G["ArenaEnemyFrame" .. i .. "HealthBar"]
+            local mana = _G["ArenaEnemyFrame" .. i .. "ManaBar"]
+            hp.TextString:SetFont(FontType, ExadTweaks.db.HPFontSize, "OUTLINE")
+            mana.TextString:SetFont(FontType, ExadTweaks.db.ManaFontSize, "OUTLINE")
+        end
+    end
+end
+
+local function true_format(value)
+    if (ExadTweaks.db.ShortNumeric) then
+        if value > 1e7 then
+            return (round(value / 1e6)) .. 'm'
+        elseif value > 1e6 then
+            return (round((value / 1e6) * 10) / 10) .. 'm'
+        elseif value > 1e4 then
+            return (round(value / 1e3)) .. 'k'
+        elseif value > 1e3 then
+            return (round((value / 1e3) * 10) / 10) .. 'k'
+        else
+            return value
+        end
+    elseif not ExadTweaks.db.ShortNumeric then
+        return value
+    end
+end
+
+local function asuriFormat(value)
+    if (value >= 1e6) then
+        return ("%.1fM"):format(value / 1e6)
+    elseif (value >= 1e5) then
+        return ("%.0fk"):format(value / 1e3)
+    elseif (value >= 1e3) then
+        return ("%.1f"):format(value / 1e3)
+    else
+        return value
+    end
+end
+
+local function New_TextStatusBar_UpdateTextStringWithValues(textStatusBar)
+    local textString = textStatusBar.TextString;
+
+    if textString then
+        local value = textStatusBar.finalValue or textStatusBar:GetValue();
+        local _, valueMax = textStatusBar:GetMinMaxValues();
+
+        if textStatusBar.currValue and textStatusBar.currValue > 0 then
+            if ExadTweaks.db.ShortNumeric then
+                textString:SetText(true_format(value));
+            elseif ExadTweaks.db.AsuriFrame and not ExadTweaks.db.ShortNumeric then
+                textString:SetText(asuriFormat(value));
+            else
+                textString:SetText(value);
+            end
+        else
+            textString:Hide()
+        end
+    end
+end
+
+local CF = CreateFrame("Frame")
+CF:RegisterEvent("PLAYER_LOGIN")
+CF:SetScript("OnEvent", function(self, event)
+    if event == "PLAYER_LOGIN" and (ExadTweaks.db.smooth or ExadTweaks.db.ShortNumeric or ExadTweaks.db.Abbreviate) then
+        hooksecurefunc("TextStatusBar_UpdateTextString", New_TextStatusBar_UpdateTextStringWithValues)
+    end
+    self:UnregisterEvent("PLAYER_LOGIN")
+    self:SetScript("OnEvent", nil)
+end);
