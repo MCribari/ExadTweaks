@@ -431,6 +431,10 @@ local function ClassPortrait(self)
     end
 
     if self.portrait and UnitIsPlayer(self.unit) then
+        if self.unit == "player" then
+            return
+        end
+
         local _, class = UnitClass(self.unit)
         if class then
             self.portrait:SetTexture(CLASS_TEXTURE:format(class))
