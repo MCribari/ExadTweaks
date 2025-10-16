@@ -16,14 +16,13 @@ local classcolors = {
     ["MONK"] = CreateColor(0.0, 1.00 , 0.59),
 };
 
-
 function CL:CreateClassOutlines(unit, frame)
     local outlineEnabled = ExadTweaks.db.classoutline
     local isPlayer = UnitIsPlayer(unit)
     local classification = UnitClassification(unit)
     local asuriFrameEnabled = ExadTweaks.db.AsuriFrame
     local noLevel = ExadTweaks.db.NoLevel
-    
+
     if not self.NF[unit] then
         local nfUnit = CreateFrame("Frame", nil, frame)
         nfUnit:ClearAllPoints()
@@ -34,19 +33,19 @@ function CL:CreateClassOutlines(unit, frame)
         nfUnit:SetScale(1)
         nfUnit:Hide()
         self.NF[unit] = nfUnit
-        
+
         local defaultTexture = noLevel and "Interface\\AddOns\\ExadTweaks\\textures\\nolevel\\Priest"
-                              or "Interface\\AddOns\\ExadTweaks\\textures\\target\\Priest"
+            or "Interface\\AddOns\\ExadTweaks\\textures\\target\\Priest"
         nfUnit.texture:SetTexture(defaultTexture)
     end
 
     local nfUnit = self.NF[unit]
-    
+
     if asuriFrameEnabled and not isPlayer and classification ~= "normal" then
         local texturePath = (classification == "elite" or classification == "worldboss")
-                and "Interface\\AddOns\\ExadTweaks\\textures\\target\\ChainAsuriGold"
-                or ((classification == "rareelite" or classification == "rare")
-                and "Interface\\AddOns\\ExadTweaks\\textures\\target\\ChainAsuri")
+            and "Interface\\AddOns\\ExadTweaks\\textures\\target\\ChainAsuriGold"
+            or ((classification == "rareelite" or classification == "rare")
+            and "Interface\\AddOns\\ExadTweaks\\textures\\target\\ChainAsuri")
 
         if frame == FocusFrame then
             nfUnit.texture:SetTexCoord(1, 0, 0, 1)
@@ -62,19 +61,29 @@ function CL:CreateClassOutlines(unit, frame)
         nfUnit:Show()
         return
     end
-    
+
     if not isPlayer or not outlineEnabled then
         nfUnit:Hide()
         return
     end
-    
-    if asuriFrameEnabled then
-        nfUnit.texture:SetTexture("Interface\\AddOns\\ExadTweaks\\textures\\nolevel\\Priest")
-        nfUnit:ClearAllPoints()
-        nfUnit:SetPoint("CENTER", frame.portrait, "BOTTOMLEFT", 32, 32)
-        nfUnit:SetSize(62, 62)
+
+    nfUnit.texture:SetTexture("Interface\\AddOns\\ExadTweaks\\textures\\nolevel\\Priest")
+    nfUnit:ClearAllPoints()
+
+    if frame == TargetFrame then
+        local N = 0.7
+        nfUnit:SetPoint("TOPLEFT",     frame.portrait, "TOPLEFT",     3, -4 - N)
+        nfUnit:SetPoint("BOTTOMRIGHT", frame.portrait, "BOTTOMRIGHT", -5,  4 - N)
+    elseif frame == FocusFrame then
+        local N = 3
+        nfUnit:SetPoint("TOPLEFT",     frame.portrait, "TOPLEFT",     3, -4 - N)
+        nfUnit:SetPoint("BOTTOMRIGHT", frame.portrait, "BOTTOMRIGHT", -5,  4 - N)
+    else
+        local N = 3
+        nfUnit:SetPoint("TOPLEFT",     frame.portrait, "TOPLEFT",     3, -4 - N)
+        nfUnit:SetPoint("BOTTOMRIGHT", frame.portrait, "BOTTOMRIGHT", -5,  4 - N)
     end
-    
+
     local _, class = UnitClass(unit)
     local c = classcolors[class]
     if c then
